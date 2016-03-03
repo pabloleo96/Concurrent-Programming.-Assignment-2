@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 public class Queue {
 
     int n;
-    boolean flag = false;
+    boolean flag = true;
     volatile boolean alreadyRead = false;
     
     synchronized public void read() {
@@ -49,6 +49,7 @@ public class Queue {
 
         //Post-protocol
         flag = false;
-        this.notify();      
+        alreadyRead = false;
+        this.notifyAll();      
     }
 }

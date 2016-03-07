@@ -8,7 +8,7 @@ package PartA3;
 public class Writer implements Runnable{
     
     Queue q;
-    
+   
     Writer(Queue q){
         this.q = q;
         new Thread(this, "Writer").start();
